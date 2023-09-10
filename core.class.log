@@ -1,0 +1,25 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '5215520467094@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB020F73E1F981D32A447',
+    participant: undefined
+  },
+  messageTimestamp: 1694374093,
+  pushName: 'Grupo Industrial Arda',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage {
+      text: 'xddsadsa',
+      contextInfo: [ContextInfo],
+      inviteLinkGroupTypeV2: 0
+    },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  verifiedBizName: 'Grupo Industrial Arda',
+  body: 'xddsadsa',
+  from: '5215520467094'
+}
