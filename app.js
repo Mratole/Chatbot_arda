@@ -7,7 +7,7 @@ const MockAdapter = require('@bot-whatsapp/database/mock')
 
 
 const flowAtencion = addKeyword(['3', "B", "b"])
-    .addAnswer(['Adiós, lamento no haberte podido ayudar 👋🤖', 'En un momento te conecto con uno de mis humanos preferidos de grupo *ARDA*, recuerda que puedes llamarme en cualquier momento diciendo mi nombre (Rodo)']
+    .addAnswer(['Adiós, lamento no haberte podido ayudar 👋🤖', 'En un momento te conecto con uno de mis humanos preferidos de grupo *ARDA*, recuerda que puedes llamarme en cualquier momento diciendo mi nombre (ArdaBot)']
     );
 
 const flowInformacion = addKeyword('1')
@@ -40,7 +40,7 @@ const flowInformacion = addKeyword('1')
         '(Se rolan cada 2 semanas)',
         ' ',])
     .addAnswer(['*A)* Repetir nuestro menú de opciones',
-        '*B)* Apagar a "Rodo" y mandar mensaje directo'],
+        '*B)* Apagar a "ArdaBot" y mandar mensaje directo'],
         {
             capture: true
         }, async (ctx, { fallBack, flowDynamic, gotoFlow }) => {
@@ -61,7 +61,7 @@ const flowInformacion = addKeyword('1')
 const flowUbicacion = addKeyword('2')
     .addAnswer('Link de la Ubicación: https://goo.gl/maps/yMSstJruPsrg91Wd6')
     .addAnswer(['*A)* Repetir nuestro menú de opciones',
-        '*B)* Apagar a "Rodo" y mandar mensaje directo'],
+        '*B)* Apagar a "ArdaBot" y mandar mensaje directo'],
         {
             capture: true
         }, async (ctx, { fallBack, flowDynamic, gotoFlow }) => {
@@ -87,7 +87,7 @@ const flowMenu = addKeyword(["a", "A"])
             'Te comparto nuestro menú de opciones (Escriba el número de la opción a la que deseas navegar)',
             '*1)* Información de nuestras vacantes',
             '*2)* Ubicación de nuestra empresa',
-            '*3)* Apagar a "Rodo" y mandar mensaje directo'
+            '*3)* Apagar a "ArdaBot" y mandar mensaje directo'
         ],
         { capture: true },
         async (ctx, { fallBack, flowDynamic }) => {
@@ -100,14 +100,14 @@ const flowMenu = addKeyword(["a", "A"])
         [flowInformacion, flowUbicacion, flowAtencion]
     )
 
-const flowPrincipal = addKeyword(["RODO", "rodo", "rod", "Rodo", "rODO"], { sensitive: true })
-    .addAnswer('Hola soy "Rodo" 👋🤖, el asistente virtual de grupo *ARDA* ', '¿En qué puedo ayudarte el día de hoy?')
+const flowPrincipal = addKeyword(["ArdaBot", "ardabot", "ARDABOT", "ArdaBot", "ardaBot"], { sensitive: true })
+    .addAnswer('Hola soy "ArdaBot" 👋🤖, el asistente virtual de grupo *ARDA* ', '¿En qué puedo ayudarte el día de hoy?')
     .addAnswer(
         [
             'Te comparto nuestro menú de opciones (Escriba el número de la opción a la que deseas navegar)',
             '*1)* Información de nuestras vacantes',
             '*2)* Ubicación de nuestra empresa',
-            '*3)* Apagar a "Rodo" y mandar mensaje directo'
+            '*3)* Apagar a "ArdaBot" y mandar mensaje directo'
         ],
         { capture: true },
         async (ctx, { fallBack, flowDynamic }) => {
@@ -130,7 +130,7 @@ const flowWelcome = addKeyword(EVENTS.WELCOME)
 
             state.update({ welcome: "enviado" })
 
-            flowDynamic('Hola, este es un mensaje generado automáticamente, si deseas que nuestro asistente virtual te proporcione alguna información, simplemente escribe "Rodo". De lo contrario, puedes ignorar este mensaje. ¡Que tengas un excelente día!')
+            flowDynamic('Hola, este es un mensaje generado automáticamente, si deseas que nuestro asistente virtual te proporcione alguna información, simplemente escribe "ArdaBot". De lo contrario, puedes ignorar este mensaje. ¡Que tengas un excelente día!')
 
         }
     }
